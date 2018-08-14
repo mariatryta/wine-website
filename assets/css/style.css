@@ -1,0 +1,330 @@
+/* Css variables */
+
+:root {
+    --main-color: #04151F;
+    --light-color: #C4C4C4;
+    --cat: #788EA5;
+    --text-color: #f2f2f2;
+    --overlay-color: #363635;
+    --h2-font: 'Lato', sans-serif;
+    --h1-font: 'Playball';
+    --text-font: 'Arima Madurai', sans-serif;
+}
+
+/* general */
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+.flexbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+h1,
+h2 {
+    font-family: var(--h1-font);
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 10vw;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-family: var(--h2-font);
+    font-size: 1.275em;
+    font-weight: normal;
+}
+
+.text {
+    font-family: var(--text-font);
+    font-size: 1em;
+    padding-top: 1%;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.container {
+    margin: auto;
+    width: 75%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    border: solid 0.875rem;
+    border-color: rgba(54, 54, 53, 0.432);
+    color: var(--text-color);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 3vh;
+}
+
+/* header */
+
+.main.flexbox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+}
+
+.main {
+    height: 100%;
+    background-image: url('../../images/vineyard-min.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 40%;
+    background-color: rgba(28, 28, 46, 0.7);
+    background-blend-mode: soft-light;
+}
+
+nav {
+    font-family: var(--h2-font);
+    font-weight: 500;
+    font-size: 1.175rem;
+    width: 100%;
+    text-align: center;
+}
+
+nav>ul li {
+    display: inline-block;
+    margin: 1.5%;
+}
+
+.main a {
+    z-index: 5;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.main a:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px var(--text-color);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: -webkit-transform 250ms ease-in-out;
+    transition: -webkit-transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+.main a:hover:after {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.logo {
+    color: var(--text-color);
+    -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/* about us  */
+
+#about-us-wrapper {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    background-color: var(--main-color);
+    text-align: center;
+    padding: 5vh;
+}
+
+#about-us-wrapper.flexbox {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+/* Products */
+
+.products-wrapper {
+    height: 70vh;
+    background-color: var(--text-color);
+    text-align: center;
+}
+
+.products-wrapper.flexbox {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#products-desc {
+    margin: auto;
+    width: 75%;
+    height: 85%;
+    overflow: hidden;
+}
+
+.products-text {
+    padding: 0 0 2% 0;
+}
+
+.wines-wrapper.flexbox {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: inherit;
+    width: 100%;
+}
+
+.wine-box {
+    background-image: url('../../images/wine.jpeg');
+    height: 100%;
+    width: 23%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 40%;
+    position: relative;
+}
+
+.wine-box-text {
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    color: var(--text-color);
+    z-index: 4;
+    background-color: rgba(54, 54, 53, 0.532);
+    display: none;
+}
+
+.wine-box-text h3 {
+    padding: 0 0 2% 0;
+}
+
+/* gallery */
+
+/* Flickity slider */
+
+.carousel {
+    background-color: var(--main-color);
+}
+
+.carousel-cell {
+    width: 28%;
+    height: 200px;
+    margin: 0px;
+    counter-increment: carousel-cell;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--main-color);
+}
+
+.carousel-cell:nth-child(odd) {
+    background-image: url('../../images/galleryimage4.jpg');
+}
+
+.carousel-cell:nth-child(even) {
+    background-image: url('../../images/galleryimage.jpeg');
+}
+
+.flickity-page-dots {
+    display: none;
+}
+
+/* contact us */
+
+#contact-wrapper {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    background-color: var(--main-color);
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.form-contact.flexbox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.form-contact  {
+    text-align: center;
+}
+
+.form-contact input {
+    font-family: var(--text-font);
+    width: 40%;
+    outline: none;
+    border: none;
+    border-bottom: var(--text-color) solid 1px;
+    color: var(--text-color);
+    background-color: var(--main-color);
+    min-height: 30px;
+    margin: 1.5vh;
+    font-size: 1em;
+}
+
+.form-contact input:focus {
+    outline: none;
+    border: none;
+    border-bottom: var(--cat) solid 1px;
+}
+
+.form-contact button {
+    background-color: var(--cat);
+    border: var(--cat) solid 2px;
+    border-radius: 5px;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    padding: 0.5%;
+    font-size: 1em;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.form-contact button:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+} 
+
+/* footer */
+
+footer {
+    background-color: var(--main-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 0.2%;
+    font-family: var(--text-font);
+}
+/* media queries */
